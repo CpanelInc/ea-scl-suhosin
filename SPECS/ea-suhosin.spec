@@ -29,12 +29,12 @@ Vendor:  cPanel, Inc.
 Summary: Protective PHP Hardening Extension
 Version: 0.9.38
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4572 for more details
-%define release_prefix 1
+%define release_prefix 2
 Release: %{release_prefix}%{?dist}.cpanel
 License: PHP
 Group:   Development/Languages
 URL: https://suhosin.org/stories/index.html
-Source: https://download.suhosin.org/suhosin-0.9.38.tar.gz
+Source: suhosin-0.9.38.tar.gz
 Source1: 300-suhosin.ini
 
 BuildRequires: scl-utils-build
@@ -74,5 +74,8 @@ install -m 755 modules/suhosin.so $RPM_BUILD_ROOT%{php_extdir}
 %config(noreplace) %{php_inidir}/300-suhosin.ini
 
 %changelog
+* Thu Mar 30 2017 Cory McIntire <cory@cpanel.net> - 0.9.38-2
+- EA-5977: Spiff up for Release - Take out of Experimental
+
 * Mon Mar 13 2017 Jacob Perkins <jacob.perkins@cpanel.net> - 0.9.38-1
 - Initial creation
