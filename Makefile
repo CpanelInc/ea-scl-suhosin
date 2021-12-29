@@ -1,6 +1,5 @@
 OBS_PROJECT := EA4
-scl-php56-php-suhosin-obs : DISABLE_BUILD += repository=CentOS_8
-scl-php55-php-suhosin-obs : DISABLE_BUILD += repository=CentOS_8
-scl-php54-php-suhosin-obs : DISABLE_BUILD += repository=CentOS_8
 OBS_PACKAGE := scl-suhosin
+DISABLE_BUILD := repository=CentOS_8
+DISABLE_DEBUGINFO := repository=CentOS_6.5_standard repository=CentOS_7
 include $(EATOOLS_BUILD_DIR)obs-scl.mk

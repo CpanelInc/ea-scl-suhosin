@@ -29,7 +29,7 @@ Vendor:  cPanel, Inc.
 Summary: Protective PHP Hardening Extension
 Version: 0.9.38
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4572 for more details
-%define release_prefix 4
+%define release_prefix 5
 Release: %{release_prefix}%{?dist}.cpanel
 License: PHP
 Group:   Development/Languages
@@ -75,6 +75,9 @@ install -m 755 modules/suhosin.so $RPM_BUILD_ROOT%{php_extdir}
 %config(noreplace) %{php_inidir}/300-suhosin.ini
 
 %changelog
+* Wed Dec 29 2021 Dan Muey <dan@cpanel.net> - 0.9.38-5
+- ZC-9616: disable OBS debuginfo flag for C6 and C7
+
 * Tue Dec 28 2021 Dan Muey <dan@cpanel.net> - 0.9.38-4
 - ZC-9589: Update DISABLE_BUILD to match OBS
 
